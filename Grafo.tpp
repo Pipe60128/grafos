@@ -1,5 +1,7 @@
 #pragma once
 #include "Grafo.h"
+#include <iostream>
+using namespace std;
 
 template <typename T>
 int Grafo<T>:: indexOf(const T& v) const {
@@ -36,4 +38,17 @@ bool Grafo<T>:: addEdge(const T& u, const T& v, int weight, bool directed) {
 }
 
 template <typename T>
-void Grafo<T>:: printMatrix() const {}
+void Grafo<T>:: printMatrix() const {
+    cout<<"------MATRIZ------"<<endl;
+    for (int i = 0; i < count; i++) {
+        cout << vertices[i] << " ";
+    }
+    cout<<"\n";
+    for(int i  = 0; i < count; i++ ){
+        cout << vertices[i] << " ";
+        for (int j =0 ; j < count; j++){
+            cout<< matrix[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}

@@ -4,22 +4,19 @@ using namespace std;
 
 
 int main() {
-    int m = 4;
-    int n = 4;
-    int matriz[m][n]= {
-        {0, 0, 0, 0},
-        {0, 0, 0, 0},
-        {0, 0, 0, 0},
-        {0, 0, 0, 0}
-    };
-    
-    for(int i = 0; i < m; i++) {
-        cout<< i+1 << " |";
-        for(int j = 0; j < n; j++) {
-            cout << matriz[i][j] << " ";
-        }
-        cout << endl;
-    }
+    Grafo<string> g(10);
+    g.addVertex("CDMX");
+    g.addVertex("GDL");
+    g.addVertex("MTY");
+    g.addVertex("PUE");
+    g.addVertex("QRO");
+    g.addVertex("TOL");
+    g.addEdge("CDMX", "GDL");
+    g.addEdge("TOL", "QRO");
+    g.addEdge("GDL", "MTY");
+    g.printMatrix();
+
     
     return 0;
 }
+
