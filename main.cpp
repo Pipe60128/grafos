@@ -4,7 +4,7 @@ using namespace std;
 
 
 int main() {
-    Grafo<string> g(10);
+    Grafo<string> g(6);
     g.addVertex("CDMX");
     g.addVertex("GDL");
     g.addVertex("MTY");
@@ -12,11 +12,15 @@ int main() {
     g.addVertex("QRO");
     g.addVertex("TOL");
     g.addEdge("CDMX", "GDL");
-    g.addEdge("TOL", "QRO");
     g.addEdge("GDL", "MTY");
+    g.addEdge("CDMX", "PUE");
+    g.addEdge("PUE", "QRO");
+    g.addEdge("QRO", "TOL");
     g.printMatrix();
+    g.BFS("CDMX");
+    g.resetVisited();
+    g.DFS("CDMX");
 
-    
     return 0;
 }
 
